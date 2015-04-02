@@ -1,0 +1,21 @@
+$include (hska_include_.inc)
+
+TASTER_1 BIT P2_DATA.0
+
+CSEG AT 0h
+	jmp START
+
+CSEG AT 100h
+START:
+	mov P3_DIR, #0FFh
+
+MAINLOOP: 
+	jb TASTER_1, ANSCHALTEN
+	mov P3_DATA, #0AAh
+	jmp MAINLOOP
+
+ANSCHALTEN:
+	mov P3_DATA, #055h
+	jmp MAINLOOP
+
+END
