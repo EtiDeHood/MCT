@@ -13,8 +13,8 @@ void main(void)
 			zaehler ++;
 			}
 			
-		if((zaehler%2)==0)
-			{P3_DATA=0xF0;}
+		if(((zaehler%2)==0) & (zaehler != 0))
+			{P3_DATA=0x0F;}
 		else{P3_DATA=0x00;}
 	}
   }
