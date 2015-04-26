@@ -7,6 +7,10 @@ void main(void)
 
 unsigned char zaehler_ueberlauf = 0;
 
+PORT_PAGE = 1;
+P3_PUDEN = 0;
+PORT_PAGE = 0;
+
 P3_DIR=0xFF;
 P3_DATA=0;
 
@@ -14,7 +18,7 @@ TMOD = 1;
 TCON = 0x10;
 while (1)
 {
- while(TFO == 0){;}
+ while(TF0 == 0){;}
  TF0= 0;
  TL0 = 0xA0;
  TH0 = 0x15;
